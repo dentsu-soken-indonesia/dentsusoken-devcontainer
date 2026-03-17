@@ -1,0 +1,32 @@
+name: Publish Dev Container Template
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Login to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Publish templates
+        run: npx -y @devcontainers/cli templates publish src -n ${{ github.repository }}
+
+      - name: Verify template metadata
+        run: npx -y @devcontainers/cli templates metadata ghcr.io/${{ github.repository }}/ai-python-node

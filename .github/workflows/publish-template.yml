@@ -26,7 +26,7 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
 
       - name: Publish templates
-        run: npx -y @devcontainers/cli templates publish src -n ${{ github.repository }}
+        run: npx -y @devcontainers/cli templates publish devcontainers/src -n dentsu-soken-indonesia/devcontainers
 
       - name: Verify template metadata
-        run: npx -y @devcontainers/cli templates metadata ghcr.io/${{ github.repository }}/ai-python-node
+        run: npx -y @devcontainers/cli templates metadata ghcr.io/dentsu-soken-indonesia/devcontainers/ai-python-node:0.1.0

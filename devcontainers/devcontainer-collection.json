@@ -1,9 +1,9 @@
 {
     "name": "AI Python + Node Dev Container Templates",
-    "id": "devcontainer-ai-python-node",
+    "id": "dentsusoken-devcontainer",
     "version": "0.1.0",
     "description": "Dev Container templates for AI workflows with Python, Node.js, Docker CLI, and Codex tooling.",
-    "documentationURL": "https://github.com/dentsu-soken-indonesia/devcontainer-ai-python-node",
-    "licenseURL": "https://github.com/dentsu-soken-indonesia/devcontainer-ai-python-node/blob/main/LICENSE",
+    "documentationURL": "https://github.com/dentsu-soken-indonesia/dentsusoken-devcontainer",
+    "licenseURL": "https://github.com/dentsu-soken-indonesia/dentsusoken-devcontainer/blob/main/LICENSE",
     "publisher": "dentsu-soken-indonesia"
 }

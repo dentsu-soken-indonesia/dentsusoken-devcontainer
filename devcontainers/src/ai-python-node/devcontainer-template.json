@@ -3,9 +3,9 @@
     "version": "0.1.0",
     "name": "AI Python + Node",
     "description": "Development environment with Node.js, Python, Docker CLI client, and Codex-oriented setup scripts.",
-    "documentationURL": "https://github.com/dentsu-soken-indonesia/devcontainer-ai-python-node/tree/main/src/ai-python-node",
+    "documentationURL": "https://github.com/dentsu-soken-indonesia/dentsusoken-devcontainer/tree/main/src/ai-python-node",
     "publisher": "dentsu-soken-indonesia",
-    "licenseURL": "https://github.com/dentsu-soken-indonesia/devcontainer-ai-python-node/blob/main/LICENSE",
+    "licenseURL": "https://github.com/dentsu-soken-indonesia/dentsusoken-devcontainer/blob/main/LICENSE",
     "platforms": [
         "Node.js",
         "Python"

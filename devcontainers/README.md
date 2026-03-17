@@ -7,17 +7,17 @@ This repository publishes a Dev Container Template that users can apply with `de
 ```bash
 devcontainer templates apply \
   -w . \
-  -t ghcr.io/<org>/devcontainer-ai-python-node/ai-python-node
+  -t ghcr.io/dentsu-soken-indonesia/devcontainer-ai-python-node/ai-python-node
 ```
 
 ## Publish the template
 
 ```bash
-npx -y @devcontainers/cli templates publish src/ai-python-node -n <org>/devcontainer-ai-python-node
+npx -y @devcontainers/cli templates publish src/ai-python-node -n dentsu-soken-indonesia/devcontainer-ai-python-node
 ```
 
 ## Verify published metadata
 
 ```bash
-npx -y @devcontainers/cli templates metadata ghcr.io/<org>/devcontainer-ai-python-node/ai-python-node
+npx -y @devcontainers/cli templates metadata ghcr.io/dentsu-soken-indonesia/devcontainer-ai-python-node/ai-python-node
 ```

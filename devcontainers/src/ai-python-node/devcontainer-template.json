@@ -1,6 +1,6 @@
 {
     "id": "ai-python-node",
-    "version": "0.1.0",
+    "version": "0.1.4",
     "name": "AI Python + Node",
     "description": "Development environment with Node.js, Python, Docker CLI client, and Codex-oriented setup scripts.",
     "documentationURL": "https://github.com/dentsu-soken-indonesia/dentsusoken-devcontainer/tree/main/src/ai-python-node",

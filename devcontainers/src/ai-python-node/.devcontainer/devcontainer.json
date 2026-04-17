@@ -1,21 +1,27 @@
 {
   "name": "node-python-codex-docker-mcp",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "remoteUser": "vscode",
+  "containerUser": "vscode",  
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "features": {
-    "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers/features/python:1": {},
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "moby": false
+    },
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/common-utils:2": {"configureZshAsDefaultShell":true},
     "ghcr.io/devcontainers/features/git:1": {
       "ppa": true
     }
   },
-  "onCreateCommand": "bash .devcontainer/on-create.sh && sudo mkdir -p /home/${containerUser}/.codex && sudo chown -R ${containerUser}:${containerUser} /home/${containerUser}/.codex",
+  "onCreateCommand": "bash .devcontainer/on-create.sh",
   "updateContentCommand": "bash .devcontainer/update-content.sh",
   "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "postStartCommand": "bash .devcontainer/post-start.sh",
   "mounts": [
-    "source=codex-home,target=/home/${containerUser}/.codex,type=volume"
+    "source=codex-home,target=/home/vscode/.codex,type=volume"
   ],
   "customizations": {
     "vscode": {

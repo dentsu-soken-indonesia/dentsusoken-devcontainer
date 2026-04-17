@@ -38,6 +38,7 @@ git push origin vX.Y.Z
 
 4. Verify metadata and test `devcontainer templates apply` in a clean folder.
 ```
+  npx -y @devcontainers/cli templates metadata ghcr.io/dentsu-soken-indonesia/devcontainers/ai-python-node
   mkdir -p /tmp/dc-template-test && cd /tmp/dc-template-test
   npx -y @devcontainers/cli templates apply -w . -t ghcr.io/dentsu-soken-indonesia/devcontainers/ai-python-node
 ```

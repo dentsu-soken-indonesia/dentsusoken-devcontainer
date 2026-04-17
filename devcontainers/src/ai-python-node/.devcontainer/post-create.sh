@@ -1,16 +1,23 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Scope: workspace & user specific 
-# Use this to define use specific setup in the workspace
-# Runs once after creation
-# postCreateCommand in devcontainer.json runs once after the container is created and the workspace is mounted.
-# It’s commonly used to install project dependencies, run setup scripts, or initialize development tools.
-# for example : 
-# - user environment variable
+# Runs ONCE when the container is first created
 
-if [[ -f "${HOME}/.zshrc" ]]; then
-  sed -i 's/^ZSH_THEME="devcontainers"$/ZSH_THEME="jonathan"/' "${HOME}/.zshrc"
-fi
+# Situation:
+#   - The container is fully created
+#   - user environment and profile exists ($HOME, ${containerUser})
+
+# Purpose:
+#	- user spesific folders (under the home)
+#	- user-specific setup
+#	- user-auth setup
+#	- user-specific bootstrap for private package registries
+#	- install tools using user credentials
+#	- configure dotfiles or personal CLI auth
 
 
+# Initiate codex home
+mkdir -p $HOME/.codex
+
+# Extra safe in case of the owner is changing
+sudo chown -R "$(id -u)":"$(id -g)" "$HOME/.codex" || true
